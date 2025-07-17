@@ -1,0 +1,130 @@
+/* General Layout */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f4f8;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo Section */
+.logo {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: transform 300ms, filter 300ms;
+  animation: logoBounce 2s ease-in-out infinite;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.3);
+}
+
+.logo.react:hover {
+  background: linear-gradient(45deg, #fb5421, #ff8a00);
+  filter: brightness(1.2);
+}
+
+@keyframes logoBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Card Styling */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+  transition: box-shadow 200ms ease, transform 300ms ease;
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text and Links Styling */
+.read-the-docs {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1rem;
+  animation: fadeInText 1.5s ease-in-out;
+}
+
+.read-the-docs a {
+  text-decoration: none;
+  color: #fb5421;
+  font-weight: bold;
+  transition: color 300ms;
+  animation: colorPulse 2s ease-in-out infinite;
+}
+
+.read-the-docs a:hover {
+  color: #e52e71;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color: #fb5421;
+  }
+  50% {
+    color: #ff8a00;
+  }
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    width: 4em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
